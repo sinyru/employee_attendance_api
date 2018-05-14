@@ -237,3 +237,42 @@ curl http://localhost:4741/employees/$ID \
 curl --include --request DELETE http://localhost:4741/employees/$ID \
   --header "Authorization: Token token=$TOKEN"
 ```
+
+### AttendancesController
+#### GET /attendances/:id
+```md
+curl --include --request GET http://localhost:4741/attendances/$ID \
+  --header "Authorization: Token token=$TOKEN"
+```
+
+#### POST /attendances/
+```md
+curl http://localhost:4741/attendances \
+  --include \
+  --request POST \
+  --header "Content-Type: application/json" \
+  --data '{
+    "attendance": {
+      "date_attended": "2018-05-20",
+      "hours_worked": 8,
+      "employee_id": 1
+    }
+  }'
+```
+#### PATCH /attendances/:id
+```md
+curl http://localhost:4741/attendances/$ID \
+  --include \
+  --request PATCH \
+  --header "Content-Type: application/json" \
+  --data '{
+    "attendance": {
+      "hours_worked": 8.5
+    }
+  }'
+```
+#### DELETE /attendances/:id
+```md
+curl --include --request DELETE http://localhost:4741/attendances/$ID \
+  --header "Authorization: Token token=$TOKEN"
+```
