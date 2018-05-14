@@ -2,4 +2,5 @@
 class User < ApplicationRecord
   include Authentication
   has_many :employees
+  has_many :attendances
 end
